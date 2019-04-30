@@ -1,0 +1,78 @@
+/*
+ * This is a manifest file that'll be compiled into application.css, which will include all the files
+ * listed below.
+ *
+ * Any CSS and SCSS file within this directory, lib/assets/stylesheets, or any plugin's
+ * vendor/assets/stylesheets directory can be referenced here using a relative path.
+ *
+ * You're free to add application-wide styles to this file and they'll appear at the bottom of the
+ * compiled file so the styles you add here take precedence over styles defined in any other CSS/SCSS
+ * files in this directory. Styles in this file should be added after the last require_* statement.
+ * It is generally better to create a new file per style scope.
+ /*
+ *= require_tree .
+ *= require_self
+ */
+
+@import "bootstrap";
+
+
+ * {
+   margin: 0;
+   padding: 0;
+ }
+
+ a {
+     color: #F50670;
+     text-decoration: none;
+     background-color: transparent;
+     border-radius: 100%;
+}
+
+.a:hover{
+  color: #F50670;
+}
+
+body{
+  background-color: white;
+}
+
+ // .c-top-bar>.o-container {
+ //     position: relative;
+ //     padding-right: 24px;
+ //     padding-left: 24px;
+ // }
+ //
+ // .c-top-bar{
+ //   font-size: 2em;
+ //   font-weight: bold;
+ //   color: white;
+ //   height: 72px;
+ //   background-color: #b1f3a1;
+ //   text-align: center;
+ // }
+ //
+ // .o-container {
+ //     margin-right: auto;
+ //     margin-left: auto;
+ //     height: 100%;
+ // }
+ //
+ // .o-container-header-logo{
+ //   height: 100%;
+ //   display: flex;
+ //   justify-content: center;
+ //   text-align: center;
+ //   padding: 15px;
+ // }
+
+ .footer-bar {
+   display: flex;
+   justify-content: center;
+   align-items: center;
+
+   height: 50px;
+   background-color: white;
+   font-size: 15px;
+   color: #F50670;
+ }

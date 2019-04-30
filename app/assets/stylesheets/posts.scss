@@ -1,0 +1,352 @@
+// Place all the styles related to the posts controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+.btn {
+  background-color: white;
+  border: 1px solid #cccccc;
+  //border-radius: 1rem;
+  color: #696969;
+  padding: 0.5rem;
+  text-transform: lowercase;
+}
+
+.btn--block {
+  display: block;
+  width: 100%;
+}
+
+
+
+// .card {
+//   background-color: white;
+//   border-radius: 0.25rem;
+//   box-shadow: 0 20px 40px -14px rgba(0,0,0,0.25);
+//   display: flex;
+//   flex-direction: row;
+//   flex-wrap: wrap;
+//   overflow: hidden;
+//   &:hover {
+//     .card__image {
+//       filter: contrast(100%);
+//     }
+//   }
+// }
+
+.c-top-bar>.o-container {
+    position: relative;
+    padding-right: 24px;
+    padding-left: 24px;
+}
+
+.c-top-bar{
+  font-size: 2em;
+  font-weight: bold;
+  color: #F50670;
+  height: 72px;
+  background-color: white;
+  text-align: center;
+}
+
+.header-container {
+    margin-right: auto;
+    margin-left: auto;
+    height: 100%;
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.header-container-nav{
+  display: flex;
+  flex-direction: row;
+  margin-right: 20px;
+}
+
+.btn-right-radius {
+  height: 40px;
+  margin-right: 20px;
+  margin-top: 4px;
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: #F50670;
+  background: #ECECEC;
+  border-radius: 0 15px 15px 0;
+  transition: .4s;
+}
+
+.btn-right-radius:hover {
+  background: #636363;
+}
+
+.header-container-search{
+}
+
+#form4{
+position:relative;
+max-width:300px;
+margin-bottom:20px;
+}
+#search{
+height:40px;
+padding:0 10px;
+// position:absolute;
+// left:0;
+top:0;
+border-radius:25px 0 0 25px;
+outline:0;
+background:#eee;
+margin-top: 4px;
+}
+#sbtn4{
+height:40px;
+width:50px;
+// position:absolute;
+// left:171px;
+// top:0;
+background:#F50670;
+color:#fff;
+border:none;
+border-radius:0 25px 25px 0;
+}
+#sbtn4 .fa-search{
+font-size:20px;
+// position:absolute;
+// top:30%;
+// left:30%;
+}
+#sbtn4:hover{
+color:#888;
+}
+
+
+
+.header-container-header-logo{
+  height: 100%;
+  display: flex;
+  padding: 15px;
+}
+
+.header-image {
+  cursor: pointer;
+  border-radius: 100%;
+  height: 50px;
+  width: 50px;
+  margin-left:20px;
+}
+
+.header-container-nav{
+font-size: 16px;
+position: absolute;
+right: 0;
+padding-top: 20px;
+margin-right: 20px;
+display: flex;
+flex-direction: row;
+}
+
+#header-nav-slide{
+  z-index: 10;
+  width: 274px;
+  height: 150px;
+  position: absolute;
+  top: 60px;
+  right: 50px;
+  background-color: #f8f9fa;
+}
+
+.header-nav-slide-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  padding: 8px 24px;
+}
+
+.header-nav-slide-link{
+  color: #080909
+}
+
+
+
+.close-nav{
+  cursor: pointer;
+  color: #0e020e
+}
+
+.o-container-topost-new{
+  color: #F50670;
+}
+
+.container{
+  background-color: white;
+}
+
+.row{
+  background-color: white;
+}
+
+.card_item{
+  padding-top: 30px;
+}
+
+.card__content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: white;
+  height: 400px;
+}
+
+.card__content:hover{
+  background-color: #f2f2f4;
+}
+
+.card-user-image{
+ border-radius: 100%;
+}
+
+.card__name{
+
+  @media(min-width: 40rem) {
+  &::before {
+    padding-top: 50px; // 3:2 aspect ratio
+  }
+}
+
+}
+
+.card__image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  filter: contrast(70%);
+  //filter: saturate(180%);
+  overflow: hidden;
+  position: relative;
+  transition: filter 0.5s cubic-bezier(.43,.41,.22,.91);
+  object-fit: cover;
+}
+
+
+
+.card__title {
+  color: #080808;
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Segoe UI,Hiragino Kaku Gothic ProN,Hiragino Sans,ヒラギノ角ゴ ProN W3,Arial,メイリオ,Meiryo,sans-serif;
+}
+
+.card__text {
+  flex: 1 1 auto;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+.col-md-6{
+  background-color:#f8f8f9;
+}
+
+.show_card_image{
+  margin-top: 30px;
+  object-fit: cover;
+  width: 100%;
+  border-radius: 10px;
+
+}
+
+// .like-btnのcolorを「#8899a6」にしてください
+.like-btn {
+  color: #8899a6;
+}
+
+// .like-btn-unlikeのcolorを「#ff2581」にしてください
+.like-btn-unlike {
+  color: #ff2581;
+}
+
+// ここに指定されたCSSを貼り付けてください
+.posts-show .fa {
+  font-size: 16px;
+  margin-right: 3px;
+}
+
+#sns-area{
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+}
+
+.sns-btn{
+  display: inline-block;
+  font-family: Arial;
+  font-size: 14px;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 5px;
+  padding: 14px 80px;
+  margin-bottom: 20px;
+
+  a {
+    color: white;
+    margin: auto;
+    position: relative;
+    bottom: 7px;
+  }
+}
+
+.sns-btn:active{
+  top: 2px;
+}
+
+.twitter-btn{
+  background-color: #008DDE;
+  box-shadow: 0 4px 0 #0078BD;
+  height: 10px;
+}
+
+.twitter-btn:active {
+  box-shadow: 0 2px 0 #0078BD;
+}
+.twitter-btn:hover {
+  background-color: #1397D8;
+}
+
+.facebook-btn {
+  background-color: #2e4a88;
+  box-shadow: 0 4px 0 #1B3D82;
+  text-shadow: 0 -1px -1px #1B3D82;
+  height: 10px;
+}
+.facebook-btn:hover {
+  background-color: #354F84;
+}
+.facebook-btn:active {
+	box-shadow: 0 2px 0 #1B3D82;
+}
+
+.line-btn {
+  background-color: #01b901;
+  box-shadow: 0 4px 0 #01b901;
+  height: 10px;
+}
+
+.line-btn:active{
+  box-shadow: 0 2px 0 #01b901;
+}
+
+.line-btn:hover {
+  background-color: #01b901;
+}

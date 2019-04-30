@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+ <head>
+   <meta charset="UTF-8">
+   <title>簡単SNS最適化サービス</title>
+   <link rel="stylesheet" type="text/scss" href="stylesheets/tops.scss">
+ </head>
+ <body>
+   <header class="c-top-bar">
+     <div class="o-container">
+       <a class="o-container-header-logo">kokuchii</a>
+     </div>
+   </header>
+<main>
+  <div class="p-lp">
+    <div class="p-lp-hello-section">
+      <div class="o-container">
+        <h1 class="p-lp-hello-section-title">
+          愛する自分のサービスを
+          <br>
+          snsに最適化させて告知しよう
+        </h1>
+        <p class="p-lp-hello-section-subtitle">kokuchiiは個人開発者がsnsで自分のサービスをバズらせることを少しでもお手伝いするサービスです。</p>
+        <div class="p-lp-hello-section-button">
+          <a class="p-lp-hello-section-button-twitter" href="/users/auth/twitter">Twitterログイン</a>
+        </div>
+      </div>
+    </div>
+    <div class="p-lp-index-section">
+      <div class="container">
+        <div class="row">
+          <% @posts.each do |t| %>
+          <div class="col-sm-4">
+            <div class="card_item">
+              <div class="card__content">
+                  <div class="card__name">
+                  <%= link_to t.user.name, user_path(id: t.user_id) %>
+                  </div>
+                  <div class="card__image">
+                    <%= image_tag t.image.to_s,class: "card-image",width:400,height:400 %>
+                  </div>
+                  <div class="card__title">
+                    <%= t.title %>
+                  </div>
+                  <p class="card__text"><%=t.detail.truncate(50)%></p>
+                  <button class="btn btn--block card__btn"><%= link_to "もっとみる", post_path(t.id) %></button>
+                </div>
+            </div>
+          </div>
+          <% end %>
+        </div>
+
+      </div>
+
+
+    </div>
+  </div>
+</main>
+ </body>
+</html>
+
+あ
+<%= link_to "Sign in with", user_twitter_omniauth_authorize_path %><br />

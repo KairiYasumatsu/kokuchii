@@ -1,0 +1,46 @@
+<header class="c-top-bar">
+  <div class="header-container">
+    <a class="header-container-header-logo">kokuchii</a>
+     <div class="header-container-nav">
+       <%= image_tag @user.image.to_s, :class => "header-image" %>
+      <a href="/users/<%= current_user.id %>"><%= current_user.name %></a>
+     </div>
+  </div>
+</header>
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-1">
+
+    </div>
+
+    <div class="col-md-10">
+<h1 class="text-center text-weight-bold pt-5">コクチを作る</h1>
+<%= form_for @post do |f| %>
+  <div class="field pt-4">
+    <%= f.label :タイトル %>
+    <%= f.text_area :title, class:"form-control", :placeholder => "タイトルを書いてください"%>
+  </div>
+
+  <div class="field pt-4">
+    <%= f.label :画像 %>
+    <%= f.file_field :image, class:"form-control col-md-4" %>
+  </div>
+
+  <div class="field pt-4">
+    <%= f.label :詳細 %>
+    <%= f.text_area :detail, class:"form-control", :placeholder => "コクチの詳細を書いてください", size: "100x5" %>
+  </div>
+  <div class="field text-center pt-5">
+  <%= f.submit "コクチする", class: "btn btn-primary"  %>
+  </div>
+<% end %>
+<%= link_to "コクチ一覧に戻る", posts_path %>
+    </div>
+
+    <div class="col-md-1">
+
+    </div>
+  </div>
+</div>

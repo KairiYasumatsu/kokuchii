@@ -1,0 +1,211 @@
+// Place all the styles related to the users controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.c-top-bar>.o-container {
+    position: relative;
+    padding-right: 24px;
+    padding-left: 24px;
+}
+
+.c-top-bar{
+  font-size: 2em;
+  font-weight: bold;
+  color: #F50670;
+  height: 72px;
+  background-color: white;
+  text-align: center;
+}
+
+.header-container {
+    margin-right: auto;
+    margin-left: auto;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    position: relative;
+}
+
+.header-container-header-logo{
+  height: 100%;
+  display: flex;
+  padding: 15px;
+}
+
+
+.header-container-nav{
+font-size: 16px;
+position: absolute;
+right: 0;
+padding-top: 20px;
+margin-right: 20px;
+}
+
+.header-image {
+  cursor: pointer;
+  border-radius: 100%;
+  height: 50px;
+  width: 50px;
+  margin-left:20px;
+}
+
+.header-container-nav{
+font-size: 16px;
+position: absolute;
+right: 0;
+padding-top: 20px;
+margin-right: 20px;
+display: flex;
+flex-direction: row;
+}
+
+#header-nav-slide{
+  z-index: 10;
+  width: 274px;
+  height: 150px;
+  position: absolute;
+  top: 60px;
+  right: 50px;
+  background-color: #f8f9fa;
+}
+
+.header-nav-slide-item{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  height: 100%;
+  padding: 8px 24px;
+}
+
+.header-nav-slide-link{
+  color: #080909
+}
+
+.header-container-user-name{
+  color: #F50670;
+}
+
+.o-container-topost-new{
+  color: #F50670;
+}
+
+
+
+.user-info{
+  margin: 0px 100px;
+}
+
+.user-info-information{
+  display: flex;
+  flex-direction: row;
+}
+
+.user-profile-image{
+  border-radius: 100%;
+  width: 104px;
+  height: 104px;
+}
+
+.user-info-information-name{
+  padding: 10px 0px 0px 20px;
+}
+
+.user-info-status{
+  padding-left: 128px;
+  position: relative;
+  bottom: 60px;
+}
+
+.user-tabs{
+  display: flex;
+  flex-direction: row;
+  padding-left: 300px;
+  overflow: hidden;
+  box-shadow: 0 2px 6px #c1ced7;
+}
+
+.active-like{
+  padding-left: 50px;
+  color: #57575f;
+}
+
+.container{
+  background-color: #f2f2f4;
+}
+
+
+
+
+// .user-index{
+//   padding-left: 200px;
+// }
+
+// .col-md-8{
+//   margin: 0;
+// }
+
+.card_item{
+  padding-top: 30px;
+  min-width: 300px;
+}
+
+.card__content {
+  display: flex;
+  flex: 1 1 auto;
+  flex-direction: column;
+  padding: 1rem;
+  background-color: white;
+}
+
+.card__name{
+
+  @media(min-width: 40rem) {
+  &::before {
+    padding-top: 50px; // 3:2 aspect ratio
+  }
+}
+
+}
+
+.card__image {
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top-left-radius: 0.25rem;
+  border-top-right-radius: 0.25rem;
+  filter: contrast(70%);
+  //filter: saturate(180%);
+  overflow: hidden;
+  position: relative;
+  transition: filter 0.5s cubic-bezier(.43,.41,.22,.91);;
+}
+
+
+
+.card__title {
+  color: #080808;
+  font-size: 1.25rem;
+  font-weight: 300;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  font-family: -apple-system,BlinkMacSystemFont,Helvetica Neue,Segoe UI,Hiragino Kaku Gothic ProN,Hiragino Sans,ヒラギノ角ゴ ProN W3,Arial,メイリオ,Meiryo,sans-serif;
+}
+
+.card__text {
+  flex: 1 1 auto;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  margin-bottom: 1.25rem;
+}
+
+.btn-primary{
+  position: relative;
+  bottom: 23px;
+}
+
+.edit-user-profile-image{
+  border-radius: 100%;
+  width: 104px;
+  height: 104px;
+  margin-top: 100px;
+}

@@ -1,0 +1,72 @@
+<header class="c-top-bar">
+  <div class="header-container">
+    <a class="header-container-header-logo">kokuchii</a>
+     <div class="header-container-nav">
+       <div class="header-user-image">
+        <%= image_tag @user.image.to_s, :class => "header-image" %>
+       </div>
+     </div>
+  </div>
+</header>
+
+<div id="header-nav-slide">
+  <div class="header-nav-slide-item">
+  <%= link_to "ログアウト", destroy_user_session_path,method: :delete, :class => "header-nav-slide-link" %>
+  <%= link_to "マイページ", user_path(current_user.id), :class => "header-nav-slide-link" %>
+  <p class="close-nav">閉じる</p>
+  </div>
+</div>
+
+<div class="user-info">
+  <div class="user-info-information">
+    <%= link_to edit_user_path do %>
+    <%= image_tag @user.image, :class => "user-profile-image"%>
+    <% end %>
+    <p class="user-info-information-name"><%=@user.name%></p>
+  </div>
+  <div class="user-info-status">
+    <p class="user-info-status-profile"><%=@user.profile%></p>
+    <%= link_to "プロフィールを編集", edit_user_path %>
+  </div>
+
+</div>
+
+<ul class="user-tabs">
+      <p class="active-post"><%= link_to("投稿", "/users/#{@user.id}") %></p>
+      <p class="active-like"><%= link_to("いいね!", "/users/#{@user.id}/likes") %></p>
+    </ul>
+
+    <div class="container">
+      <div class="row">
+    <% @user.likes.each do |like| %>
+    <% post = Post.find_by(id: like.post_id)%>
+      <div class="col-md-4">
+        <div class="card__content">
+              <div class="card__name">
+                <%= link_to like.post.user.name, user_path(id: like.user_id) %>
+              </div>
+              <div class="card__image">
+                <%= image_tag like.post.image.to_s,class: "card-image",width:300,height:300 %>
+              </div>
+              <div class="card__title">
+                <%= like.post.title %>
+              </div>
+              <p class="card__text"><%=like.post.detail.truncate(50)%></p>
+              <button class="btn btn--block card__btn"><%= link_to "もっとみる", post_path(like.post.id) %></button>
+        </div>
+      </div>
+    <% end %>
+  </div>
+</div>
+
+<script type="text/javascript">
+  $(function(){
+    $("#header-nav-slide").css("display","none");
+    $('.header-image').click(function(){
+      $("#header-nav-slide").css("display","block");
+    });
+    $(".close-nav").click(function(){
+     $("#header-nav-slide").slideUp(250);
+   });
+  });
+</script>

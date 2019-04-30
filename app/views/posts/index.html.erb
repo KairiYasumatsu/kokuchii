@@ -1,0 +1,73 @@
+
+<header class="c-top-bar" onclick="displaynone()">
+  <div class="header-container">
+    <div class="header-container-header-logo">kokuchii</div>
+     <div class="header-container-nav">
+       <a href="<%=new_post_path%>" class="btn-right-radius">コクチする</a>
+      <div class="header-container-search">
+        <div id="form4">
+        <%= form_tag(controller:"posts",action:"index") do %>
+        <label class="search" for="inpt_search">
+         <%= text_field_tag :search, "", placeholder: "フリーワードを入力" %>
+         <button id="sbtn4" id="s" type="submit"><i class="fa fa-search"></i></button>
+        <% end %>
+        </div>
+      </div>
+      <div class="header-user-image">
+       <%= image_tag @user.image.to_s, :class => "header-image" %>
+      </div>
+     </div>
+  </div>
+</header>
+
+
+
+<div id="header-nav-slide">
+  <div class="header-nav-slide-item">
+  <%= link_to "ログアウト", destroy_user_session_path,method: :delete, :class => "header-nav-slide-link" %>
+  <%= link_to "マイページ", user_path(current_user.id), :class => "header-nav-slide-link" %>
+  <p class="close-nav">閉じる</p>
+  </div>
+</div>
+
+<div class="container">
+  <div class="row">
+    <% @posts.each do |t| %>
+    <div class="col-sm-4">
+      <div class="card_item">
+        <div class="card__content">
+
+            <div class="card__name">
+              <%= link_to user_path(id: t.user_id) do %>
+              <%= image_tag t.user.image.to_s, :class => "card-user-image" %>
+              <% end %>
+              <%= link_to t.user.name, user_path(id: t.user_id) %>
+            </div>
+            <div class="card__image">
+              <%= image_tag t.image.to_s,class: "card-image",width:300 %>
+            </div>
+            <div class="card__title">
+              <%= t.title %>
+            </div>
+            <p class="card__text"><%=t.detail.truncate(50)%></p>
+            <button class="btn btn--block card__btn"><%= link_to "もっとみる", post_path(t.id) %></button>
+          </div>
+      </div>
+    </div>
+    <% end %>
+  </div>
+</div>
+
+<a><%= link_to "ログアウト", destroy_user_session_path,method: :delete %></a>
+
+<script type="text/javascript">
+  $(function(){
+    $("#header-nav-slide").css("display","none");
+    $('.header-image').click(function(){
+      $("#header-nav-slide").css("display","block");
+    });
+    $(".close-nav").click(function(){
+     $("#header-nav-slide").slideUp(250);
+   });
+  });
+</script>
