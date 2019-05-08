@@ -2,11 +2,11 @@ class PostsController < ApplicationController
   def index
        @user=current_user
     if params[:search] == nil
-        @posts = Post.all
+        @posts = Post.all.order("id DESC")
       elsif params[:search] == ""
-        @posts = Post.all
+        @posts = Post.all.order("id DESC")
       else
-        @posts = Post.where("title LIKE ? ", "%" + params[:search] + "%").or(Post.where("detail LIKE ? ", "%" + params[:search] + "%"))
+        @posts = Post.where("title LIKE ? ", "%" + params[:search] + "%").or(Post.where("detail LIKE ? ", "%" + params[:search] + "%")).order("id DESC")
       end
   end
 

@@ -1,0 +1,152 @@
+// Place all the styles related to the rooms controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+.message-index-container{
+  display: flex;
+  flex-direction: column;
+  border-radius: 10%;
+}
+
+.message-index-container-title{
+  text-align: center;
+  width: 100%;
+  margin-bottom: 0;
+  margin-top: 10px;
+}
+
+.message-index-container-conversation{
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+}
+
+.message-index-conversation-user{
+  padding: 5px 0 5px 0;
+}
+
+.message-index-conversation-company{
+  padding: 5px 0 5px 0;
+}
+
+.box-conversation{
+  height: 30px;
+}
+
+.conversation-container{
+  margin-top: 20px;
+}
+
+.col-md-6{
+  background-color: white;
+}
+
+.col-md-3{
+  background-color: #f7f9f9
+}
+
+.chat-box-right {
+    width: 100%;
+    height: auto;
+    overflow: hidden; /*floatの解除*/
+    margin-bottom: 20px;
+    text-align: right;
+}
+
+.chat-box-left {
+    width: 100%;
+    height: auto;
+    overflow: hidden; /*floatの解除*/
+    margin-bottom: 20px;
+    text-align: left;
+}
+
+.chat-face {
+    float: left;
+    margin-right: -120px;
+}
+.chat-face img{
+    border-radius: 30px;
+    border: 1px solid #ccc;
+    box-shadow: 0 0 4px #ddd;
+}
+
+.chat-area-left {
+  position: relative;
+  display: inline-block;
+      margin: 0 0 0 15px;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #f7f9f9;
+  left: 70px;
+}
+
+.chat-area-left::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: -30px;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-right: 15px solid #f7f9f9;
+}
+
+.chat-area-left p {
+  margin: 0;
+  padding: 0;
+}
+
+.chat-area-right {
+  position: relative;
+  display: inline-block;
+  margin: 1.5em 15px 1.5em 0;
+  padding: 7px 10px;
+  min-width: 120px;
+  max-width: 100%;
+  color: #555;
+  font-size: 16px;
+  background: #f7f9f9;
+}
+
+.chat-area-right::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 100%;
+  margin-top: -15px;
+  border: 15px solid transparent;
+  border-left: 15px solid #f7f9f9;
+}
+
+.chat-area-right p {
+  margin: 0;
+  padding: 0;
+}
+
+.chat-content-right{
+  width: 200px;
+  text-align: left;
+}
+
+.chat-content-left{
+  width: 200px;
+  text-align: left;
+}
+
+
+.form-conversation{
+  text-align: center;
+}
+
+.form-content{
+  width: 85%;
+}
+
+.form-submit{
+  width: 50px;
+  background-color: #F50670;
+  color: white;
+}

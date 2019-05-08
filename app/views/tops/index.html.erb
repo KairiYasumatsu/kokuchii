@@ -6,26 +6,32 @@
    <link rel="stylesheet" type="text/scss" href="stylesheets/tops.scss">
  </head>
  <body>
-   <header class="c-top-bar">
-     <div class="o-container">
-       <a class="o-container-header-logo">kokuchii</a>
-     </div>
-   </header>
-<main>
-  <div class="p-lp">
-    <div class="p-lp-hello-section">
-      <div class="o-container">
-        <h1 class="p-lp-hello-section-title">
-          愛する自分のサービスを
-          <br>
-          snsに最適化させて告知しよう
-        </h1>
-        <p class="p-lp-hello-section-subtitle">kokuchiiは個人開発者がsnsで自分のサービスをバズらせることを少しでもお手伝いするサービスです。</p>
-        <div class="p-lp-hello-section-button">
-          <a class="p-lp-hello-section-button-twitter" href="/users/auth/twitter">Twitterログイン</a>
+   <div class="first-block">
+     <header class="c-top-bar">
+       <div class="o-container">
+         <a class="o-container-header-logo">kokuchii</a>
+         <%= link_to "採用担当者の方", new_company_registration_path, :class => "o-container-header-company" %>
+       </div>
+     </header>
+
+     <div class="p-lp">
+      <div class="p-lp-hello-section">
+        <div class="o-container">
+          <h1 class="p-lp-hello-section-title">
+            愛する自分のサービスを
+            <br>
+            表現する。バズらせる。スカウトされる。
+          </h1>
+          <p class="p-lp-hello-section-subtitle">kokuchiiは個人開発者の課題感や思いを少しでも多くの人に伝えることをお手伝いするサービスです。</p>
+          <div class="p-lp-hello-section-button">
+            <a class="p-lp-hello-section-button-twitter" href="/users/auth/twitter">Twitterログイン</a>
+            <a class="p-lp-hello-section-button-facebook" href="/users/auth/facebook">facebookログイン</a>
+          </div>
         </div>
       </div>
-    </div>
+   </div>
+  </div>
+
     <div class="p-lp-index-section">
       <div class="container">
         <div class="row">
@@ -34,6 +40,9 @@
             <div class="card_item">
               <div class="card__content">
                   <div class="card__name">
+                    <%= link_to user_path(id: t.user_id) do %>
+                    <%= image_tag t.user.image.to_s, :class => "card-user-image" %>
+                    <% end %>
                   <%= link_to t.user.name, user_path(id: t.user_id) %>
                   </div>
                   <div class="card__image">
@@ -55,9 +64,5 @@
 
     </div>
   </div>
-</main>
  </body>
 </html>
-
-あ
-<%= link_to "Sign in with", user_twitter_omniauth_authorize_path %><br />

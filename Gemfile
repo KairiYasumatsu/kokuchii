@@ -62,3 +62,4 @@ gem 'jquery-ui-rails'
 group :production do
   gem 'pg'
 end
+gem 'omniauth-facebook'

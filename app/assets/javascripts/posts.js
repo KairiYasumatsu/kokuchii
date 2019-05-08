@@ -2,9 +2,9 @@
 var snsArea = document.getElementById('sns-area');
 
 // シェア時に使用する値
-
-
-generate_share_button(snsArea, shareUrl, shareText);
+if(document.getElementsByClassName('sns-btn').length == 0) {
+  generate_share_button(snsArea, shareUrl, shareText);
+}
 
 // シェアボタンを生成する関数
 function generate_share_button(area, url, text) {
@@ -18,7 +18,7 @@ function generate_share_button(area, url, text) {
 
     // 各シェアボタンのリンク先
     var twHref = 'https://twitter.com/share?text='+encodeURIComponent(text)+'&url='+encodeURIComponent(url);
-    var fbHref = 'http://www.facebook.com/share.php?u='+encodeURIComponent(url);
+    var fbHref = 'https://www.facebook.com/sharer/sharer.php?u='+encodeURIComponent(url);
     var liHref = 'https://line.me/R/msg/text/?'+encodeURIComponent(text)+' '+encodeURIComponent(url);
 
     // シェアボタンにリンクを追加

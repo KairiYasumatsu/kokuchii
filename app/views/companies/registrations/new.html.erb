@@ -1,0 +1,65 @@
+<head>
+  <style>
+  .footer-bar{
+    background-color: #f7f9f9
+  }
+
+  body{
+    background-color: #f7f9f9
+  }
+  </style>
+</head>
+
+<div class="company-register">
+
+
+
+<header style="height: 90px;">
+    <div class="header-register-container">
+     <div class="header-register-container-logo">
+      <a href="/">kokuchii</a>
+     </div>
+    </div>
+</header>
+
+<div class="company-registration">
+  <div class="company-registration-container">
+     <div class="company-registration-title">
+      <p class="company-registration-title-text">新規法人登録する</p>
+     </div>
+     <div class="company-registration-form">
+       <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
+         <%= render "devise/shared/error_messages", resource: resource %>
+
+         <div class="field">
+           <%= f.text_field :name, :placeholder => "貴社名", :class => "company-input" %>
+         </div>
+
+
+         <div class="field">
+           <%= f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "メール", :class => "company-input" %>
+         </div>
+
+         <div class="field">
+           <% if @minimum_password_length %>
+           <% end %>
+           <%= f.password_field :password, autocomplete: "new-password", :placeholder => "パスワード", :class => "company-input" %>
+         </div>
+
+         <div class="field">
+           <%= f.password_field :password_confirmation, autocomplete: "new-password", :placeholder => "パスワード再入力", :class => "company-input" %>
+         </div>
+
+         <div class="actions">
+           <%= f.submit "登録する", :class => "company-input-registration" %>
+         </div>
+       <% end %>
+       <div class="to-login">
+         <%= render "companies/shared/links" %>
+       </div>
+     </div>
+  </div>
+</div>
+
+
+</div>

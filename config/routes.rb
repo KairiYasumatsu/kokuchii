@@ -1,5 +1,17 @@
 Rails.application.routes.draw do
 
+
+
+
+
+  get 'rooms/show'
+
+  get 'rooms/index'
+
+  get 'rooms/:id' => 'rooms#show'
+
+  devise_for :companies
+  resources :companies, :only => [:index, :show, :destroy, :edit, :update ]
   post "posts/search" => "posts#index"
   get "posts/search" => "posts#index"
   devise_for :users,  controllers: { omniauth_callbacks: 'users/omniauth_callbacks' }
@@ -10,6 +22,10 @@ Rails.application.routes.draw do
   resources :posts, :only=>[:index, :new, :show, :create, :edit]do
   resources :comments, only: [:new, :create]
   resources :likes, only: [:create, :destroy]
+end
+
+  resources :rooms, :only => [:show, :create] do
+    resources :messages, :only => [:create]
 end
 
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html

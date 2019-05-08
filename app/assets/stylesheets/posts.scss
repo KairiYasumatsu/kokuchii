@@ -101,7 +101,7 @@ top:0;
 border-radius:25px 0 0 25px;
 outline:0;
 background:#eee;
-margin-top: 4px;
+padding-top: 8px;
 }
 #sbtn4{
 height:40px;
@@ -179,8 +179,54 @@ flex-direction: row;
   color: #0e020e
 }
 
+.header-user-enter-login{
+  height: 32px;
+  width: 72px;
+  color: #787c7b;
+  font-size: 13px;
+  padding-top: 10px;
+}
+
+.header-user-enter-sign-up{
+  position: relative;
+  display: inline-block;
+  font-weight: bold;
+  padding: 0.25em 0.5em;
+  text-decoration: none;
+  color: white;
+  background: #F50670;
+  transition: .4s;
+  border-radius: 10%;
+  font-size: 13px;
+  padding: 5px 10px;
+  height: 25px;
+  margin-top: 10px;
+}
+
+.header-user-enter-sign-up:active{
+  /*ボタンを押したとき*/
+ -webkit-transform: translateY(4px);
+ transform: translateY(4px);/*下に動く*/
+ border-bottom: none;/*線を消す*/
+}
+
 .o-container-topost-new{
   color: #F50670;
+}
+
+.form-control-detail{
+  display: block;
+    width: 100%;
+    padding: 0.375rem 0.75rem;
+    font-size: 1rem;
+    line-height: 1.5;
+    color: #495057;
+    background-color: #fff;
+    background-clip: padding-box;
+    border: 1px solid #ced4da;
+    border-radius: 0.25rem;
+    transition: border-color 0.15s;
+    height: 600px;
 }
 
 .container{
@@ -266,14 +312,39 @@ flex-direction: row;
 
 }
 
+.show-user-info{
+  display: flex;
+  flex-direction: row;
+}
+
+.show-user-image{
+  cursor: pointer;
+  border-radius: 100%;
+  height: 50px;
+  width: 50px;
+}
+
+.show-user-name{
+  padding-top: 10px;
+  margin-left: 20px;
+}
+
+.like-count{
+  padding-top: 10px;
+}
+
 // .like-btnのcolorを「#8899a6」にしてください
 .like-btn {
   color: #8899a6;
+  padding-top: 15px;
+  margin-left: 20px;
 }
 
 // .like-btn-unlikeのcolorを「#ff2581」にしてください
 .like-btn-unlike {
   color: #ff2581;
+  padding-top: 15px;
+  margin-left: 20px;
 }
 
 // ここに指定されたCSSを貼り付けてください

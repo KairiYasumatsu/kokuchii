@@ -1,0 +1,135 @@
+<head>
+  <style>
+  .header{
+   background-color: #f7f9f9
+  }
+
+  .footer-bar{
+    background-color: #f7f9f9
+    width: 100%;
+    color: #F50670;
+    text-align: center;
+    padding: 30px 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+  }
+
+  body{
+    background-color: #f7f9f9
+  }
+  </style>
+</head>
+
+<div class="room-index">
+
+
+
+<header class="c-top-bar" onclick="displaynone()">
+  <div class="header-container">
+    <%= link_to "kokuchii", posts_path, :class => "header-container-header-logo" %>
+     <div class="header-container-nav">
+       <% if user_signed_in? %>
+       <a href="<%=new_post_path%>" class="btn-right-radius">コクチする</a>
+       <% else %>
+       <% end %>
+      <div class="header-container-search">
+        <div id="form4">
+        <%= form_tag(controller:"posts",action:"index") do %>
+        <label class="search" for="inpt_search">
+         <%= text_field_tag :search, "", placeholder: "フリーワードを入力" %>
+         <button id="sbtn4" id="s" type="submit"><i class="fa fa-search"></i></button>
+        <% end %>
+        </div>
+      </div>
+      <% if user_signed_in? %>
+      <div class="header-user-conversation">
+        <%= link_to rooms_index_path(current_user) do %>
+        <i class="fa fa-commenting-o" aria-hidden="true"></i>
+        <% end %>
+      </div>
+      <div class="header-user-image">
+       <%= image_tag current_user.image.to_s, :class => "header-image" %>
+      </div>
+      <% elsif company_signed_in? %>
+      <div class="header-user-conversation">
+        <%= link_to rooms_index_path(current_company) do %>
+        <i class="fa fa-commenting-o" aria-hidden="true"></i>
+        <% end %>
+      </div>
+      <div class="header-user-image">
+      <p class="header-image"> <i class="fa fa-user-o" aria-hidden="true" style="margin-left: 0;"></i></p>
+      </div>
+      <% else %>
+      <% end %>
+     </div>
+  </div>
+</header>
+
+<div class="box-conversation">
+
+</div>
+
+<% if user_signed_in? %>
+<div id="header-nav-slide">
+  <div class="header-nav-slide-item">
+  <%= link_to "ログアウト", destroy_user_session_path,method: :delete, :class => "header-nav-slide-link" %>
+  <%= link_to "マイページ", user_path(current_user.id), :class => "header-nav-slide-link" %>
+  <p class="close-nav">閉じる</p>
+  </div>
+</div>
+<% else %>
+<div id="header-nav-slide">
+  <div class="header-nav-slide-item">
+  <%= link_to "ログアウト", destroy_company_session_path,method: :delete, :class => "header-nav-slide-link" %>
+  <%= link_to "マイページ", company_path(current_company.id), :class => "header-nav-slide-link" %>
+  <p class="close-nav">閉じる</p>
+  </div>
+</div>
+<% end %>
+
+
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4" style="background-color: #F7F9FA;">
+
+    </div>
+
+    <div class="col-md-4" style="padding: 0;">
+        <div class="message-index-container">
+          <p class="message-index-container-title">スカウト一覧</p>
+          <div class="message-index-container-conversation">
+            <% if user_signed_in? %>
+            <% current_user.rooms.each do |r| %>
+             <%= link_to r.company.name, room_path(r.id), :class => "message-index-conversation-user" %>
+            <% end %>
+            <% else %>
+            <% current_company.rooms.each do |r| %>
+             <%= link_to r.user.name, room_path(r.id), :class => "message-index-conversation-company" %>
+            <% end %>
+            <% end %>
+          </div>
+        </div>
+    </div>
+
+    <div class="col-md-4" style="background-color: #F7F9FA;">
+
+    </div>
+  </div>
+</div>
+</div>
+
+
+
+<script type="text/javascript">
+  $(function(){
+    $("#header-nav-slide").css("display","none");
+    $('.header-image').click(function(){
+      $("#header-nav-slide").css("display","block");
+    });
+    $(".close-nav").click(function(){
+     $("#header-nav-slide").slideUp(250);
+   });
+  });
+</script>

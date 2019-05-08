@@ -1,29 +1,39 @@
-<h2>Sign up</h2>
+<head>
+  <style>
+  .footer-bar{
+    background-color: #f7f9f9
+  }
 
-<%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
-  <%= render "devise/shared/error_messages", resource: resource %>
+  body{
+    background-color: #f7f9f9
+  }
+  </style>
+</head>
 
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
+<div class="user-register">
+
+
+
+<header style="height: 90px;">
+    <div class="header-register-container">
+     <div class="header-register-container-logo">
+      <a href="/">kokuchii</a>
+     </div>
+    </div>
+</header>
+
+<div class="user-registration">
+  <div class="user-registration-container">
+     <div class="user-registration-title">
+      <p class="user-registration-title-text">kokuchiiに登録する</p>
+     </div>
+     <div class="user-registration-SNS">
+      <a class="p-lp-hello-section-button-twitter" href="/users/auth/twitter">Twitter登録</a>
+      <a class="p-lp-hello-section-button-facebook" href="/users/auth/facebook">facebook登録</a>
+     </div>
   </div>
+</div>
 
-  <div class="field">
-    <%= f.label :password %>
-    <% if @minimum_password_length %>
-    <em>(<%= @minimum_password_length %> characters minimum)</em>
-    <% end %><br />
-    <%= f.password_field :password, autocomplete: "new-password" %>
-  </div>
 
-  <div class="field">
-    <%= f.label :password_confirmation %><br />
-    <%= f.password_field :password_confirmation, autocomplete: "new-password" %>
-  </div>
 
-  <div class="actions">
-    <%= f.submit "Sign up" %>
-  </div>
-<% end %>
-
-<%= render "users/shared/links" %>
+</div>

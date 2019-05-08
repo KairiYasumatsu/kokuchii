@@ -1,0 +1,72 @@
+// Place all the styles related to the companies controller here.
+// They will automatically be included in application.css.
+// You can use Sass (SCSS) here: http://sass-lang.com/
+
+
+
+
+.company-register{
+  background-color: #f7f9f9
+}
+
+.header-register-container{
+  margin: auto;
+  background-color: #f7f9f9
+}
+
+.header-register-container-logo{
+  text-align: center;
+  padding-top: 50px;
+  padding-bottom: 10px;
+  margin-bottom: 10px;
+  padding-top: 50px;
+  font-size: 40px;
+  font-weight: bold;
+}
+
+.company-registration{
+  background-color: #f7f9f9
+}
+
+.company-registration-container{
+  background-color: white;
+  margin: 0 auto;
+  width: 360px;
+  margin-top: 100px;
+  height: 400px;
+  border-radius: 10%;
+  margin-bottom: 170px;
+}
+
+.company-registration-title-text{
+  text-align: center;
+  padding-top: 30px;
+}
+
+.company-registration-form{
+  text-align: center;
+}
+
+.company-input{
+  margin-top: 20px;
+}
+
+.company-input-registration{
+  margin-top: 10px;
+  background-color: #F50670;
+  color: white;
+  width: 170px;
+border-radius: 10px;
+}
+
+.to-login{
+  margin-top: 20px;
+}
+
+.company-login-input{
+  margin-top: 20px;
+}
+
+.to-registration{
+  margin-top: 20px;
+}

@@ -1,0 +1,59 @@
+<head>
+  <style>
+  .footer-bar{
+    background-color: #f7f9f9
+  }
+
+  body{
+    background-color: #f7f9f9
+  }
+  </style>
+</head>
+
+<div class="company-register">
+
+
+
+<header style="height: 90px;">
+    <div class="header-register-container">
+     <div class="header-register-container-logo">
+      <a href="/">kokuchii</a>
+     </div>
+    </div>
+</header>
+
+<div class="company-registration">
+  <div class="company-registration-container">
+     <div class="company-registration-title">
+      <p class="company-registration-title-text">法人ログイン</p>
+     </div>
+     <div class="company-registration-form">
+       <%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
+         <div class="field">
+           <%= f.email_field :email, autofocus: true, autocomplete: "email", :placeholder => "メール", :class => "company-login-input" %>
+         </div>
+
+         <div class="field">
+           <%= f.password_field :password, autocomplete: "current-password", :placeholder => "パスワード", :class => "company-login-input" %>
+         </div>
+
+         <% if devise_mapping.rememberable? %>
+           <div class="field">
+             <%= f.check_box :remember_me %>
+             <%= f.label :remember_me %>
+           </div>
+         <% end %>
+
+         <div class="actions">
+           <%= f.submit "ログイン", :class => "company-login-input" %>
+         </div>
+       <% end %>
+
+        <div class="to-registration">
+         <%= render "companies/shared/links" %>
+        </div>
+
+     </div>
+  </div>
+</div>
+</div>

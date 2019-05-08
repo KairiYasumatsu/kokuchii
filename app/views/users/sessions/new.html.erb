@@ -1,26 +1,39 @@
-<h2>Log in</h2>
+<head>
+  <style>
+  .footer-bar{
+    background-color: #f7f9f9
+  }
 
-<%= form_for(resource, as: resource_name, url: session_path(resource_name)) do |f| %>
-  <div class="field">
-    <%= f.label :email %><br />
-    <%= f.email_field :email, autofocus: true, autocomplete: "email" %>
-  </div>
+  body{
+    background-color: #f7f9f9
+  }
+  </style>
+</head>
 
-  <div class="field">
-    <%= f.label :password %><br />
-    <%= f.password_field :password, autocomplete: "current-password" %>
-  </div>
+<div class="user-register">
 
-  <% if devise_mapping.rememberable? %>
-    <div class="field">
-      <%= f.check_box :remember_me %>
-      <%= f.label :remember_me %>
+
+
+<header style="height: 90px;">
+    <div class="header-register-container">
+     <div class="header-register-container-logo">
+      <a href="/">kokuchii</a>
+     </div>
     </div>
-  <% end %>
+</header>
 
-  <div class="actions">
-    <%= f.submit "Log in" %>
+<div class="user-registration">
+  <div class="user-registration-container">
+     <div class="user-registration-title">
+      <p class="user-registration-title-text">kokuchiiにログイン</p>
+     </div>
+     <div class="user-registration-SNS">
+      <a class="p-lp-hello-section-button-twitter" href="/users/auth/twitter">Twitterログイン</a>
+      <a class="p-lp-hello-section-button-facebook" href="/users/auth/facebook">facebookログイン</a>
+     </div>
   </div>
-<% end %>
+</div>
 
-<%= render "users/shared/links" %>
+
+
+</div>

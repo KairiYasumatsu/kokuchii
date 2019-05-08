@@ -1,6 +1,19 @@
 class UsersController < ApplicationController
   def show
+      if company_signed_in?
       @user=User.find(params[:id])
+      rooms = current_company.rooms
+      #自分が入ってるroomの相手のidを格納する
+      @user_ids = []
+      rooms.each do |r|
+        @user_ids << r.user_id
+      end
+
+
+    else
+      @user=User.find(params[:id])
+
+    end
   end
 
   def destroy
