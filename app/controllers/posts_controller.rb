@@ -22,7 +22,7 @@ class PostsController < ApplicationController
     @comments = @post.comments
     @comment = Comment.new
 
-    prepare_meta_tags(title: @post.title)
+    prepare_meta_tags(image: @post.image)
   end
 
   def create
