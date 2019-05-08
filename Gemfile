@@ -65,3 +65,4 @@ group :production do
 end
 gem 'omniauth-facebook'
 gem 'meta-tags'
+gem 'rails-i18n', '~> 5.1'
