@@ -27,7 +27,7 @@ class PostsController < ApplicationController
     @post=Post.new(post_params)
     @post.user_id = current_user.id
     if @post.save
-      redirect_to :action => "index"
+      redirect_to posts_url
     else
       redirect_to :action => "new"
     end
