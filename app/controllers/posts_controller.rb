@@ -28,7 +28,7 @@ class PostsController < ApplicationController
       })
     prepare_meta_tags(title: @post.title)
     prepare_meta_tags(twitter:{
-      title: @post.title
+      title: @post.title,
       image: @post.image.to_s
       })
   end
