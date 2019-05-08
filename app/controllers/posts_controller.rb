@@ -22,7 +22,8 @@ class PostsController < ApplicationController
     @comments = @post.comments
     @comment = Comment.new
 
-    prepare_meta_tags(image: image_url(@post.image.to_s))
+    prepare_meta_tags(image: @post.image.to_s)
+    prepare_meta_tags(title: @post.title)
   end
 
   def create
