@@ -28,14 +28,12 @@ module MetaTaggable
         description: description,
         site_name: site,
         type: 'article',
-        image: image
       },
       twitter: {
         card: 'summary',
         site: '@simpliejp',
         title: title.presence || site,
         description: description,
-        image: image
       }
     }
 
