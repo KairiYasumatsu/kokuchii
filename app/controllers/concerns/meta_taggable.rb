@@ -19,7 +19,6 @@ module MetaTaggable
 
     defaults = {
       site: site,
-      title: title,
       description: description,
       keywords: base[:keywords],
       og: {
