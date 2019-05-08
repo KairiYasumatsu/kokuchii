@@ -1,0 +1,12 @@
+ja:
+  meta_tags:
+    base:
+      site: SimpliePost
+      description: エンジニアの発信をサポートし、開発者の思いを伝えるプラットフォーム
+      keywords:
+        - 個人開発
+        - 学生エンジニア
+        - エンジニア
+    titles:
+      posts:
+        index: 記事一覧

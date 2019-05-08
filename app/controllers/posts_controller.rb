@@ -21,6 +21,8 @@ class PostsController < ApplicationController
     @like = Like.new
     @comments = @post.comments
     @comment = Comment.new
+
+    prepare_meta_tags(title: @post.title)
   end
 
   def create
