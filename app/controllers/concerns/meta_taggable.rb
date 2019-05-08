@@ -24,7 +24,6 @@ module MetaTaggable
       og: {
         url: request.url,
         description: description,
-        site_name: site,
         type: 'article',
       },
       twitter: {
