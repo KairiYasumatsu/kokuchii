@@ -24,12 +24,13 @@ class PostsController < ApplicationController
 
     prepare_meta_tags(og:{
       image: @post.image.to_s,
-      title: @post.title
+
       })
     prepare_meta_tags(title: @post.title)
     prepare_meta_tags(twitter:{
       title: @post.title,
-      image: @post.image.to_s
+      image: @post.image.to_s,
+      site_name: @post.title
       })
   end
 
