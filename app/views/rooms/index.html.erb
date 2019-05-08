@@ -98,11 +98,11 @@
 
     <div class="col-md-4" style="padding: 0;">
         <div class="message-index-container">
-          <p class="message-index-container-title">スカウト一覧</p>
+          <span class="message-index-container-title" style="border-bottom: solid 10px #F7F9FA;">スカウト一覧</span>
           <div class="message-index-container-conversation">
             <% if user_signed_in? %>
             <% current_user.rooms.each do |r| %>
-             <%= link_to r.company.name, room_path(r.id), :class => "message-index-conversation-user" %>
+             <span style="border-bottom: solid 10px #F7F9FA;"><%= link_to r.company.name, room_path(r.id), :class => "message-index-conversation-user" %></span>
             <% end %>
             <% else %>
             <% current_company.rooms.each do |r| %>
