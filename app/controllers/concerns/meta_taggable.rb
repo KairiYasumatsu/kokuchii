@@ -24,7 +24,6 @@ module MetaTaggable
       keywords: base[:keywords],
       og: {
         url: request.url,
-        title: title,
         description: description,
         site_name: site,
         type: 'article',
@@ -32,7 +31,6 @@ module MetaTaggable
       twitter: {
         card: 'summary',
         site: '@simpliejp',
-        title: title.presence || site,
         description: description,
       }
     }
