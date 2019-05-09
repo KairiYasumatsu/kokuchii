@@ -105,7 +105,7 @@
       <p style="font-size: 18px;margin: 36px 0px;"><%=@post.detail%></p>
       <p><%= @post.created_at %></p>
       <% if user_signed_in? && current_user.id == @post.user.id %>
-      <p><%= link_to "編集する", edit_post_path(@post.id) %></p>
+      <%= link_to "削除する", post_path(@post.id), method: :delete %>
       <% end %>
       </div>
 

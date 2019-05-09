@@ -3,7 +3,6 @@ Rails.application.routes.draw do
 
 
 
-
   get 'rooms/show'
 
   get 'rooms/index'
@@ -19,7 +18,7 @@ Rails.application.routes.draw do
   get "users/:id/likes" => "users#likes"
   # get 'users/:id' => 'users#show'
   root to: "tops#index"
-  resources :posts, :only=>[:index, :new, :show, :create, :edit]do
+  resources :posts, :only=>[:index, :new, :show, :create, :edit, :destroy]do
   resources :comments, only: [:new, :create]
   resources :likes, only: [:create, :destroy]
 end
