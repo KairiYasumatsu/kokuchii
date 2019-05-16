@@ -87,6 +87,10 @@
 .header-container-search{
 }
 
+label{
+  display: flex !important ;
+}
+
 #form4{
 position:relative;
 max-width:300px;
@@ -101,21 +105,25 @@ top:0;
 border-radius:25px 0 0 25px;
 outline:0;
 background:#eee;
-padding-top: 8px;
 }
 #sbtn4{
 height:40px;
 width:50px;
-// position:absolute;
-// left:171px;
-// top:0;
-background:#F50670;
+position:relative;
+
+background-color: #F50670;
 color:#fff;
 border:none;
 border-radius:0 25px 25px 0;
 }
-#sbtn4 .fa-search{
-font-size:20px;
+#sbtn4::before{
+font-family: "Font Awesome 5 Free";
+font-weight: bold;
+content: "\f002";
+position: absolute;
+top: 10px;
+left: 10px;
+
 // position:absolute;
 // top:30%;
 // left:30%;
@@ -124,7 +132,10 @@ font-size:20px;
 color:#888;
 }
 
-
+.header-user-conversation{
+  margin-left: 20px;
+  padding-top: 10px;
+}
 
 .header-container-header-logo{
   height: 100%;
@@ -282,7 +293,11 @@ flex-direction: row;
   object-fit: cover;
 }
 
-
+.card-image{
+  width: 100%;
+  height: 170px;
+  object-fit: cover;
+}
 
 .card__title {
   color: #080808;

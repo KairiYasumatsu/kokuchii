@@ -3,12 +3,14 @@ class RoomsController < ApplicationController
   def index
    if user_signed_in?
     @rooms = Room.where(user_id: current_user.id)
+    @user = current_user
   else
     @rooms = Room.where(company_id: current_company.id)
   end
   end
 
   def show
+    @user = current_user
     @room = Room.find(params[:id]) #ルーム情報の取得
     @message = Message.new #新規メッセージ投稿
     @messages = @room.messages #このルームのメッセージを全て取得

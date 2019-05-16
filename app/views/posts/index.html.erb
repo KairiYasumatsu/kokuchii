@@ -12,14 +12,14 @@
         <%= form_tag(controller:"posts",action:"index") do %>
         <label class="search" for="inpt_search">
          <%= text_field_tag :search, "", placeholder: "フリーワードを入力" %>
-         <button id="sbtn4" id="s" type="submit"><i class="fa fa-search"></i></button>
+         <button id="sbtn4" id="s" type="submit"></button>
         <% end %>
         </div>
       </div>
       <% if user_signed_in? %>
       <div class="header-user-conversation">
         <%= link_to rooms_index_path(current_user) do %>
-        <i class="fa fa-commenting-o" aria-hidden="true"></i>
+        <i class="far fa-comment-dots fa-lg"></i>
         <% end %>
       </div>
       <div class="header-user-image">
@@ -28,7 +28,7 @@
       <% elsif company_signed_in? %>
       <div class="header-user-conversation">
         <%= link_to rooms_index_path(current_company) do %>
-        <i class="fa fa-commenting-o" aria-hidden="true"></i>
+        <i class="far fa-comment-dots fa-lg"></i>
         <% end %>
       </div>
       <div class="header-user-image">
@@ -74,12 +74,12 @@
               <%= link_to t.user.name, user_path(id: t.user_id) %>
             </div>
             <div class="card__image">
-              <%= image_tag t.image.to_s,class: "card-image",width:300 %>
+              <%= image_tag t.image.to_s,class: "card-image" %>
             </div>
             <div class="card__title">
               <%= t.title %>
             </div>
-            <p class="card__text"><%=t.detail.truncate(50)%></p>
+            <p class="card__text"><%= sanitize t.detail.truncate(20), tags: %w(h1 h2 h3 h4 h5 h6 ul ol li p a img table tr td em br strong div), attributes:  %w(id class href) %></p>
             <button class="btn btn--block card__btn"><%= link_to "もっとみる", post_path(t.id) %></button>
           </div>
       </div>
