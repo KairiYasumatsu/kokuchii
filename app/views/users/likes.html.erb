@@ -1,33 +1,30 @@
 <header class="c-top-bar" onclick="displaynone()">
   <div class="header-container">
-    <%= link_to "kokuchii", posts_path, :class => "header-container-header-logo" %>
-     <div class="header-container-nav">
-       <% if user_signed_in? %>
-       <a href="<%=new_post_path%>" class="btn-right-radius">コクチする</a>
-       <% else %>
-       <% end %>
+      <%= link_to "kokuchii", posts_path, :class => "header-container-header-logo" %>
+      <div class="header-container-nav">
       <div class="header-container-search">
         <div id="form4">
         <%= form_tag(controller:"posts",action:"index") do %>
         <label class="search" for="inpt_search">
          <%= text_field_tag :search, "", placeholder: "フリーワードを入力" %>
-         <button id="sbtn4" id="s" type="submit"><i class="fa fa-search"></i></button>
+         <button id="sbtn4" id="s" type="submit"></button>
         <% end %>
         </div>
       </div>
       <% if user_signed_in? %>
+      <a href="<%=new_post_path%>" class="button-topostnew"><i class="fas fa-pen"></i></a>
       <div class="header-user-conversation">
         <%= link_to rooms_index_path(current_user) do %>
-        <i class="fa fa-commenting-o" aria-hidden="true"></i>
+        <i class="far fa-comment-dots fa-lg"></i>
         <% end %>
       </div>
       <div class="header-user-image">
-       <%= image_tag current_user.image.to_s, :class => "header-image" %>
+       <%= image_tag @user.image.to_s, :class => "header-image" %>
       </div>
       <% elsif company_signed_in? %>
       <div class="header-user-conversation">
         <%= link_to rooms_index_path(current_company) do %>
-        <i class="fa fa-commenting-o" aria-hidden="true"></i>
+        <i class="far fa-comment-dots fa-lg"></i>
         <% end %>
       </div>
       <div class="header-user-image">
