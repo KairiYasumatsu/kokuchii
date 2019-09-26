@@ -11,4 +11,4 @@ Rails 5.1.7
 
 ブランチ
 必ずdevelopブランチからcheckoutすること。
-push先は必ずdevelopブランチにして、masterへpull requestを出すこと。
+、masterへpull requestを出すこと。
